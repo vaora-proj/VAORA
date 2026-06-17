@@ -44,6 +44,7 @@ For instructions on building PHYRE from source and installing in a Docker contai
 We provide jupyter notebooks that show [how to use PHYRE API](examples/01_phyre_intro.ipynb) ([open in Colab](https://colab.research.google.com/github/facebookresearch/phyre/blob/master/examples/01_phyre_intro.ipynb)) to run simulations and evaluate a random agent and [how to use simulation cache](examples/02_memoized_agent.ipynb) ([open in Colab](https://colab.research.google.com/github/facebookresearch/phyre/blob/master/examples/02_memoized_agent.ipynb)) to train agents faster.
 
 ## Training an agent
+
 We provide a set of baseline agents that are described in the paper.
 In order to run them, you need to install additional python dependencies with `pip install -r requirements.agents.txt`.
 
@@ -51,7 +52,7 @@ All the agents are located in `agents/` folder. The entry point is `train.py`
 that will train an agent on specified eval setup with a specified fold.
 E.g., the following command will train a memoization agent:
 
-```(bash)
+```bash
 python agents/train.py \
     --output-dir=results/ball_cross_template/0 \
     --eval-setup-name=ball_cross_template \
@@ -61,6 +62,40 @@ python agents/train.py \
 ```
 
 File `run_experiment.py` contains groups of experiments, e.g, sweeping over number of update for DQN-O or training agents on all seeds and eval setups. And `train_all_baseline.sh` starts experiments to train all baseline algorithms in the paper.
+
+### Reproducing VAORA DQN-expert checkpoints
+
+VAORA keeps this PHYRE source tree in the project so you can train the same DQN baselines we publish on Hugging Face:
+
+- Checkpoint repo: [`vaora-proj/vaora-checkpoints`](https://huggingface.co/vaora-proj/vaora-checkpoints) (`DQN-expert/`)
+  - `dqn_cross_template_testing_set_1.ckpt`
+  - `dqn_cross_template_testing_set_2.ckpt`
+  - `dqn_cross_template_testing_set_3.ckpt`
+  - `dqn_within_template.ckpt`
+  - `results_*.json` (evaluation metrics)
+
+From the `VAORA/phyre` directory, with agent dependencies installed (`pip install -r requirements.agents.txt`), run:
+
+```bash
+cd /path/to/VAORA/phyre
+
+python agents/train.py \
+    --eval-setup-name ball_my_template_based_split \
+    --fold-id 0 \
+    --output-dir results/dev/my_dqn/ball_my_template_based_split/0 \
+    --agent-type dqn \
+    --use-test-split 1 \
+    --dqn-updates 100000 \
+    --dqn-train-batch-size 64 \
+    --dqn-learning-rate 3e-4 \
+    --dqn-balance-classes 1 \
+    --dqn-rank-size 10000 \
+    --dqn-save-checkpoints-every 10000
+```
+
+This matches the training configuration used for our published DQN-expert checkpoints. Checkpoints are written under `--output-dir` every `--dqn-save-checkpoints-every` updates; final evaluation metrics (including `target_metric`, i.e. AUCCESS@100) are saved to `results.json` in that directory.
+
+To train the other published checkpoints, use the same hyperparameters and change `--eval-setup-name`, `--fold-id`, and `--output-dir` to match the split you want (e.g. folds `1`/`2`/`3` for the cross-template testing sets, or `ball_within_template` for the within-template expert).
 
 # License
 PHYRE is released under the Apache license. See [LICENSE](LICENSE) for additional details.
