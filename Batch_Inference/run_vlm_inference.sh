@@ -133,11 +133,11 @@ if [[ -z "${DATASET_PATH}" ]]; then
   exit 1
 fi
 
-# ── PHYRE / MiniGrid shared settings (API + local agents except craft) ────────
+# ── PHYRE settings (API + local agents except craft) ─────────────────────────
 if [[ "${BACKEND}" != "craft" ]]; then
-  EVAL_SETUPS="${EVAL_SETUPS:-ball_within_template}"
-  FOLD_ID="${FOLD_ID:-0}"
-  EVAL_TYPE="${EVAL_TYPE:-all}"
+  EVAL_SETUPS="ball_within_template"
+  FOLD_ID=1
+  EVAL_TYPE="all"
 fi
 
 # ── build command ─────────────────────────────────────────────────────────────
