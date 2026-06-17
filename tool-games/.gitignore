@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+
+# Local build output from `python setup.py build`
+environment/build/
+
+# Generated run outputs (regenerate via agents / export scripts)
+environment/artifacts/**/*
+!environment/artifacts/**/.gitkeep
+
+# Accidental shell redirects / pip logs
+=*

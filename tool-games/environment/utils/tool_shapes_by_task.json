@@ -1,0 +1,680 @@
+{
+  "Basic": {
+    "task_json": "tool-games/environment/Trials/Original/Basic.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Bridge": {
+    "task_json": "tool-games/environment/Trials/Original/Bridge.json",
+    "tools": {
+      "obj1": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj2": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Catapult": {
+    "task_json": "tool-games/environment/Trials/Original/Catapult.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRIANGLE",
+        "part_shapes": [
+          "TRIANGLE"
+        ]
+      },
+      "obj2": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Chaining": {
+    "task_json": "tool-games/environment/Trials/Original/Chaining.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj3": {
+        "shape": "TRIANGLE",
+        "part_shapes": [
+          "TRIANGLE"
+        ]
+      }
+    }
+  },
+  "Falling_A": {
+    "task_json": "tool-games/environment/Trials/Original/Falling_A.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "BALL",
+        "part_shapes": [
+          "BALL"
+        ]
+      },
+      "obj3": {
+        "shape": "JAR",
+        "part_shapes": [
+          "BAR",
+          "BAR",
+          "BAR",
+          "BAR",
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Falling_B": {
+    "task_json": "tool-games/environment/Trials/Original/Falling_B.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "BALL",
+        "part_shapes": [
+          "BALL"
+        ]
+      },
+      "obj3": {
+        "shape": "JAR",
+        "part_shapes": [
+          "BAR",
+          "BAR",
+          "BAR",
+          "BAR",
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Gap": {
+    "task_json": "tool-games/environment/Trials/Original/Gap.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Launch_A": {
+    "task_json": "tool-games/environment/Trials/Original/Launch_A.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "JAR",
+        "part_shapes": [
+          "BAR",
+          "BAR",
+          "BAR",
+          "BAR",
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Launch_B": {
+    "task_json": "tool-games/environment/Trials/Original/Launch_B.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "JAR",
+        "part_shapes": [
+          "BAR",
+          "BAR",
+          "BAR",
+          "BAR",
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Prevention_A": {
+    "task_json": "tool-games/environment/Trials/Original/Prevention_A.json",
+    "tools": {
+      "obj1": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj2": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Prevention_B": {
+    "task_json": "tool-games/environment/Trials/Original/Prevention_B.json",
+    "tools": {
+      "obj1": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj2": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "SeeSaw": {
+    "task_json": "tool-games/environment/Trials/Original/SeeSaw.json",
+    "tools": {
+      "obj1": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj2": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Shafts_A": {
+    "task_json": "tool-games/environment/Trials/Original/Shafts_A.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj3": {
+        "shape": "JAR",
+        "part_shapes": [
+          "BAR",
+          "BAR",
+          "BAR",
+          "BAR",
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Shafts_B": {
+    "task_json": "tool-games/environment/Trials/Original/Shafts_B.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj3": {
+        "shape": "JAR",
+        "part_shapes": [
+          "BAR",
+          "BAR",
+          "BAR",
+          "BAR",
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Table_A": {
+    "task_json": "tool-games/environment/Trials/Original/Table_A.json",
+    "tools": {
+      "obj1": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj2": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Table_B": {
+    "task_json": "tool-games/environment/Trials/Original/Table_B.json",
+    "tools": {
+      "obj1": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj2": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Unbox": {
+    "task_json": "tool-games/environment/Trials/Original/Unbox.json",
+    "tools": {
+      "obj1": {
+        "shape": "JAR",
+        "part_shapes": [
+          "BAR",
+          "BAR",
+          "BAR"
+        ]
+      },
+      "obj2": {
+        "shape": "JAR",
+        "part_shapes": [
+          "BAR",
+          "BAR",
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "TRIANGLE",
+        "part_shapes": [
+          "TRIANGLE"
+        ]
+      }
+    }
+  },
+  "Unsupport": {
+    "task_json": "tool-games/environment/Trials/Original/Unsupport.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj3": {
+        "shape": "BALL",
+        "part_shapes": [
+          "BALL"
+        ]
+      }
+    }
+  },
+  "Balance": {
+    "task_json": "tool-games/environment/Trials/Validation/Balance.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Basic_v2": {
+    "task_json": "tool-games/environment/Trials/Validation/Basic_v2.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Collapse": {
+    "task_json": "tool-games/environment/Trials/Validation/Collapse.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Falling_v2": {
+    "task_json": "tool-games/environment/Trials/Validation/Falling_v2.json",
+    "tools": {
+      "obj1": {
+        "shape": "JAR",
+        "part_shapes": [
+          "TRAPEZOID",
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "JAR",
+        "part_shapes": [
+          "TRAPEZOID",
+          "TRAPEZOID"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Launch_v2": {
+    "task_json": "tool-games/environment/Trials/Validation/Launch_v2.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "JAR",
+        "part_shapes": [
+          "BAR",
+          "BAR",
+          "BAR",
+          "BAR",
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Remove": {
+    "task_json": "tool-games/environment/Trials/Validation/Remove.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Shove": {
+    "task_json": "tool-games/environment/Trials/Validation/Shove.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Spiky": {
+    "task_json": "tool-games/environment/Trials/Validation/Spiky.json",
+    "tools": {
+      "obj1": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      },
+      "obj2": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Table_v2": {
+    "task_json": "tool-games/environment/Trials/Validation/Table_v2.json",
+    "tools": {
+      "obj1": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj2": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      }
+    }
+  },
+  "Trap": {
+    "task_json": "tool-games/environment/Trials/Validation/Trap.json",
+    "tools": {
+      "obj1": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj2": {
+        "shape": "BAR",
+        "part_shapes": [
+          "BAR"
+        ]
+      },
+      "obj3": {
+        "shape": "TRAPEZOID",
+        "part_shapes": [
+          "TRAPEZOID"
+        ]
+      }
+    }
+  }
+}
