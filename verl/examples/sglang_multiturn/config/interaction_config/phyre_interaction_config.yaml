@@ -1,0 +1,13 @@
+interaction:
+  - name: "phyre_physics"
+    class_name: "verl.interactions.phyre_interaction.PhyreInteraction"
+    config:
+      eval_setup: "ball_within_template"
+      fold_id: 0 # Folds are 0-indexed, so 2 is the 3rd fold.
+      split: "train"
+      max_simulation_steps: 300
+      num_samples: 5
+      unsolved_reward_upper_bound: 0.8
+      x_reward_ratio: 1.0
+      y_reward_ratio: 0.0
+      angle_reward_ratio: 1.0

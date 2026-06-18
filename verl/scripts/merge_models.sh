@@ -1,0 +1,1 @@
+python -m verl.model_merger merge --backend fsdp --local_dir path/to/local/dir --target_dir path/to/target/dir --private
