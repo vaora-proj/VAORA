@@ -1,89 +1,65 @@
-# VAORA
+<p align="center">
+  <img src="figures/vaora_logo.png" alt="VAORA" width="80"/>
+  <br><br>
+  <a href="https://vaora-proj.github.io"><img src="https://img.shields.io/badge/Project-Page-blue" alt="Project Page"></a>
+  <a href="https://github.com/vaora-proj/VAORA"><img src="https://img.shields.io/badge/Code-VAORA-black?logo=github" alt="Code"></a>
+</p>
 
-VAORA release repository for:
+<h1 align="center">Bridging Physical Reasoning and Task Generalization<br>via Visual Action Outcome Reasoning Alignment</h1>
 
-- `verl_new/`: training code (based on `verl`)
-- `Batch_Inference/`: inference and dataset build code
-- `phyre/`: physics benchmark used by our pipeline
+<p align="center">
+  <b>VAORA</b> — <i>Visual Action Outcome Reasoning Alignment</i>
+</p>
 
-## Installation
+<p align="center">
+  <a href="https://vaora-proj.github.io"><b>https://vaora-proj.github.io</b></a>
+</p>
 
-This project needs three parts installed:
+Official codebase for the paper **Bridging Physical Reasoning and Task Generalization via Visual Action Outcome Reasoning Alignment**.
 
-1. `verl` (training framework)
-2. `phyre` (physics environment)
-3. remaining Python packages used by `Batch_Inference`
+This repository contains four components that together implement VAORA — training vision-language models to reason about physical actions and their outcomes, and evaluating whether that reasoning transfers across tasks.
 
-### 1) Install `verl` (`VAORA/verl_new`)
+<p align="center">
+  <img src="figures/vaora_teaser.png" alt="VAORA teaser" width="90%"/>
+  <br>
+  <em><b>Two major obstacles in CoT-based physical reasoning.</b> <i>Hallucinated CoT</i> denotes physically incorrect reasoning that leads to a wrong action; <i>Misaligned Action</i> bypasses physically-aligned reasoning via a visual shortcut. VAORA resolves both.</em>
+</p>
 
-Follow upstream `verl` installation style (conda env + install script + editable install), then run our training scripts from `VAORA/verl_new`.
+<p align="center">
+  <img src="figures/vaora_framework.png" alt="VAORA framework" width="90%"/>
+  <br>
+  <em><b>VAORA framework.</b> (a) <b>Visual-Alignment Reward</b> anchors reasoning to action-independent visual context (grounding reward r<sub>G</sub>). (b) <b>Gated Visual-Action Alignment Reward</b> aligns reasoning with the visual outcome of the model's action (collision r<sub>C</sub> and placement r<sub>P</sub>), gated by a DQN expert success probability.</em>
+</p>
 
-```bash
-cd /path/to/VAORA
+## Components
 
-# recommended environment setup
-conda create -n vaora python=3.10.13 -y
-conda activate vaora
+### 1. [`verl/`](verl/)
 
-# install core dependencies (FSDP-only path)
-cd verl_new
-USE_MEGATRON=0 bash scripts/install_vllm_sglang_mcore.sh
+**Objective:** Reinforcement learning training for Qwen3-VL on interactive PHYRE tasks.
 
-# install verl itself
-pip install --no-deps -e .
-```
+A customized fork of [verl](https://github.com/verl-project/verl) with VAORA-specific extensions: multi-turn PHYRE interaction, decomposed reward scoring (placement / collision / grounding), GDPO training, and a PHYRE reward server for online simulation during GRPO.
 
-Notes:
+See [verl/VAORA-VERL.md](verl/VAORA-VERL.md) for training reproduction.
 
-- If you need Megatron support, use:
-  `bash scripts/install_vllm_sglang_mcore.sh`
-- Upstream installation reference:
-  [verl install docs](https://verl.readthedocs.io/en/latest/start/install.html)
-  and [verl repo](https://github.com/verl-project/verl).
+### 2. [`phyre/`](phyre/)
 
-### 2) Install `phyre` (`VAORA/phyre`)
+**Objective:** Physics simulation environment and DQN expert baselines.
 
-We keep `phyre` as a local folder in this repo. The original PHYRE README recommends Python 3.6 for the pip package, but for this integrated VAORA stack, install from local source inside your active environment:
+A local build of the [PHYRE](https://github.com/facebookresearch/phyre) benchmark used as the training and evaluation world. Provides the 2D physics simulator, task splits (within-template and cross-template), and scripts to train the DQN-expert checkpoints that score action outcomes during RL.
 
-```bash
-cd /path/to/VAORA/phyre
-pip install -e .
-```
+See [phyre/README.md](phyre/README.md) for DQN experts' training reproduction.
+### 3. [`Batch_Inference/`](Batch_Inference/)
 
-Quick validation:
+**Objective:** Batch inference and dataset preparation for PHYRE and CRAFT.
 
-```bash
-python -m phyre.server
-# then open http://localhost:30303
-```
+Runs VLM inference at scale on PHYRE and CRAFT benchmarks using API models (ChatGPT, Claude, Gemini) or local checkpoints (Qwen3-VL, InternVL). Also hosts utilities to build training datasets and evaluation JSON from simulation outputs.
 
-Reference:
-[PHYRE project](https://github.com/facebookresearch/phyre)
+See [Batch_Inference/README.md](Batch_Inference/README.md) for data download and inference.
 
-### 3) Install remaining packages for `Batch_Inference`
+### 4. [`tool-games/`](tool-games/)
 
-`Batch_Inference` uses additional libraries on top of `verl` + `phyre`:
+**Objective:** Cross-dataset generalization evaluation on Virtual-Tool.
 
-- `numpy`, `pillow`, `tqdm`
-- `pandas`, `matplotlib`
-- `transformers`, `torch`, `qwen-vl-utils`
-- optional API clients:
-  - `openai` (for ChatGPT runner)
-  - `anthropic` (for Claude runner)
-  - `google-generativeai` (for Gemini runner)
+Reproduces results on the [Virtual-Tool](https://k-r-allen.github.io/tool-games/) (tool-games) environment to test whether VAORA-trained models transfer physical reasoning to a different interactive task domain. Includes the ToolPicker simulator, VLM runners, and PHYRE DQN baselines for comparison.
 
-Install command:
-
-```bash
-cd /path/to/VAORA
-pip install numpy pillow tqdm pandas matplotlib transformers torch qwen-vl-utils openai anthropic google-generativeai
-```
-
-## Repository Layout
-
-- `verl_new/`: training framework and project-specific training scripts
-- `Batch_Inference/`: inference pipelines
-- `phyre/`: local PHYRE source used by reward/inference pipeline
-- `tool-games/`: tool-games environment and VLM inference (see `tool-games/README.md`)
-
-
+See [tool-games/README.md](tool-games/README.md) for setup and evaluation.
